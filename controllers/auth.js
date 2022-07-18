@@ -49,3 +49,8 @@ export const login = async (req, res, next) => {
     next(err);
   }
 };
+
+export const logout = async (req, res) => {
+  res.clearCookie("access_token");
+  return res.sendStatus(200);
+};
